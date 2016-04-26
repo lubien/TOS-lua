@@ -6,7 +6,7 @@ function ON_CABINET_ITEM_LIST_HOOKED(frame)
 	local cnt = itemlist:GetChildCount();
 	
 	for i = 0 , cnt - 1 do
-		local cabinetItem = session.cabinet.GetCabinetItemByIndex(i);
+		local cabinetItem = session.market.GetCabinetItemByIndex(i);
 		local ctrlSet = itemlist:GetChild("DETAIL_ITEM_" .. i .. "_0");
 		local totalPrice = ctrlSet:GetChild("totalPrice");
 		totalPrice:SetTextByKey("value", GetCommaedText(cabinetItem.count));
