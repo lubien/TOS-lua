@@ -2,8 +2,8 @@
 These addons are intended to be used with [this](https://github.com/Excrulon/Tree-of-Savior-Lua-Mods) addon loader format.
 
 
-#### CabinetCommas (untested)
-Format the silver values in the market collection tab with thousands seperators (commas).
+#### CabinetCommas
+Format the silver values for the item listings in the market "sell" and "retrieve" tabs with thousands seperators (commas) for readability. [preview](https://i.imgur.com/0jnNGxx.png)
 
 #### ChannelSurferButtons
 Quick buttons for previous and next channel. [preview](https://i.imgur.com/IgJLY0a.png)

@@ -22,3 +22,35 @@ if _G["ON_CABINET_ITEM_LIST_OLD"] == nil then
 else
 	_G[onCabinetItemListHook] = ON_CABINET_ITEM_LIST_HOOKED;
 end
+
+
+
+function ON_MARKET_SELL_LIST_HOOKED(frame, msg, argStr, argNum)
+	_G["ON_MARKET_SELL_LIST_OLD"](frame, msg, argStr, argNum);
+	
+	local itemlist = GET_CHILD(frame, "itemlist", "ui::CDetailListBox");
+	local cnt = itemlist:GetChildCount();
+
+	for i = 0 , cnt - 1 do
+		local marketItem = session.market.GetItemByIndex(i);
+		local ctrlSet = itemlist:GetChild("DETAIL_ITEM_" .. i .. "_0");
+		local priceStr = string.format("{img icon_item_silver %d %d}%s", 20, 20, GetCommaedText(marketItem.sellPrice * marketItem.count)) 
+		local totalPrice = ctrlSet:GetChild("totalPrice");
+		totalPrice:SetTextByKey("value", priceStr);
+
+		local cashValue = GetCashValue(marketItem.premuimState, "marketSellCom") * 0.01;
+		local stralue = GetCashValue(marketItem.premuimState, "marketSellCom");
+		priceStr = string.format("{img icon_item_silver %d %d}%s [%d%%]", 20, 20, GetCommaedText(marketItem.sellPrice * marketItem.count * cashValue), stralue) 
+		local silverFee = ctrlSet:GetChild("silverFee");
+		silverFee:SetTextByKey("value", priceStr);
+	end
+end
+
+local onMarketSellListHook = "ON_MARKET_SELL_LIST";
+if _G["ON_MARKET_SELL_LIST_OLD"] == nil then
+	_G["ON_MARKET_SELL_LIST_OLD"] = _G[onMarketSellListHook];
+	_G[onMarketSellListHook] = ON_MARKET_SELL_LIST_HOOKED;
+else
+	_G[onMarketSellListHook] = ON_MARKET_SELL_LIST_HOOKED;
+end
+
