@@ -5,6 +5,9 @@ These addons are intended to be used with [this](https://github.com/Excrulon/Tre
 #### CabinetCommas (untested)
 Format the silver values in the market collection tab with thousands seperators (commas).
 
+#### ChannelSurferButtons
+Quick buttons for previous and next channel. [preview](https://i.imgur.com/IgJLY0a.png)
+
 #### RemoveFPSCounter
 Hide the FPS counter.
 
