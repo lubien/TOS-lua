@@ -12,7 +12,7 @@ Quick buttons for previous and next channel. [preview](https://i.imgur.com/IgJLY
 Hide the FPS counter.
 
 #### RemoveMapBackground
-Remove the gray dimming background when the full map is opened (does not work in cities).
+Remove the gray dimming background when the full map is opened (does not work in cities). [preview](https://i.imgur.com/IfcOlo9.jpg)
 
 #### RemovePetInfo
 Hide pet names and/or HP bars. Settings are customizable at the top of the file.
